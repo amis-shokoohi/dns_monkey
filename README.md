@@ -8,7 +8,7 @@
 
 If you change your Windows DNS regularly, you know how much of a pain in the neck it is.<br>
 **DNS Monkey** is a simple DNS changer that sits in your systray, so you have easy access to it.<br>
-You can download the latest version from [here](https://github.com/amis-shokoohi/dns_monkey/releases/download/v0.1.0/dns_monkey-v0.1.0-setup.exe).
+You can download the latest version from [here](https://github.com/amis-shokoohi/dns_monkey/releases/download/v0.2.0/dns_monkey-v0.2.0-setup.exe).
 
 <div align="center">
   <img
