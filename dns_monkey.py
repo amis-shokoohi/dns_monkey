@@ -68,8 +68,9 @@ class TrayIcon:
         main_menu += [
             pystray.MenuItem("Resolvers", resolvers_menu),
             pystray.MenuItem(
-                "Help",
+                "More",
                 pystray.Menu(
+                    pystray.MenuItem("Flush DNS", flush_dns),
                     pystray.MenuItem(
                         "Home page", lambda icon, item: webbrowser.open(HOMEPAGE)
                     ),
@@ -159,6 +160,13 @@ def clear_dns():
             != "There are no Domain Name Servers (DNS) configured on this computer."
         ) or err != "":
             raise NetshError(f"{out}, {err}")
+
+
+def flush_dns():
+    out, err = run_subproc(f"ipconfig /flushdns")
+    print(out)
+    if err != "" or "Successfully" not in out:
+        raise NetshError(f"{out}, {err}")
 
 
 def get_interfaces():
