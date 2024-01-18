@@ -8,7 +8,7 @@ from PIL import Image
 
 
 APP_NAME = "DNS Monkey"
-VERSION = "0.2.0"
+VERSION = "0.2.1"
 HOMEPAGE = "https://github.com/amis-shokoohi/dns_monkey"
 SUBPROC_TIMEOUT = 10
 
