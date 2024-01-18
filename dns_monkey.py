@@ -178,7 +178,7 @@ def get_interfaces():
     for line in out.split("\n"):
         if "Connected" not in line:
             continue
-        interface = line.split()[3]
+        interface = " ".join(line.split()[3:])
         if not (interface.startswith("Ethernet") or interface.startswith("Wi-Fi")):
             continue
         interfaces.append(interface)
