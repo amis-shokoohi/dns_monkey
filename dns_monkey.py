@@ -77,6 +77,7 @@ class TrayIcon:
                     pystray.MenuItem(f"Version: v{VERSION}", None),
                 ),
             ),
+            pystray.MenuItem("Refresh", self.on_refresh_click),
             pystray.MenuItem("Quit", lambda icon, item: icon.stop()),
         ]
 
@@ -92,6 +93,10 @@ class TrayIcon:
 
         icon.notify(resolver_name)
 
+        self.main_menu = self.create_main_menu()
+        icon.update_menu()
+
+    def on_refresh_click(self, icon, item):
         self.main_menu = self.create_main_menu()
         icon.update_menu()
 
