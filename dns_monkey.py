@@ -168,8 +168,7 @@ def clear_dns():
 
 
 def flush_dns():
-    out, err = run_subproc(f"ipconfig /flushdns")
-    print(out)
+    out, err = run_subproc("ipconfig /flushdns")
     if err != "" or "Successfully" not in out:
         raise NetshError(f"{out}, {err}")
 
@@ -180,7 +179,7 @@ def get_interfaces():
         raise NetshError(err)
 
     interfaces = []
-    for line in out.split("\n"):
+    for line in out.split("\n")[2:]:
         if "Connected" not in line:
             continue
         interface = " ".join(line.split()[3:])
